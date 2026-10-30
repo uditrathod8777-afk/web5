@@ -1,0 +1,116 @@
+import { Product } from "../types";
+
+export const products: Product[] = [
+  {
+    id: "1",
+    slug: "nexorant-ui",
+    name: "NexorantUI",
+    description: "A premium open-source React component library with dark luxury aesthetics, built on top of Radix UI primitives with full TypeScript support and accessibility compliance.",
+    type: "open-source",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Radix UI", "Storybook"],
+    features: [
+      "60+ accessible components",
+      "Dark and light theme support",
+      "Full TypeScript definitions",
+      "Storybook documentation",
+      "Radix UI primitive foundation",
+      "Tailwind CSS integration",
+      "Animation system with Framer Motion",
+      "Form components with validation",
+    ],
+    github: "https://github.com/nexorant/nexorant-ui",
+    docs: "/products/nexorant-ui",
+    status: "beta",
+  },
+  {
+    id: "2",
+    slug: "forge-cli",
+    name: "Forge CLI",
+    description: "A powerful command-line tool for scaffolding Next.js projects with enterprise-grade configuration, including TypeScript, testing, CI/CD, and deployment configuration out of the box.",
+    type: "tool",
+    technologies: ["Node.js", "TypeScript", "Next.js", "Commander.js"],
+    features: [
+      "Project scaffolding in seconds",
+      "Multiple template options",
+      "TypeScript-first configuration",
+      "Built-in ESLint and Prettier setup",
+      "CI/CD pipeline templates",
+      "Docker configuration generation",
+      "Testing setup with Vitest/Jest",
+      "Deployment scripts for major platforms",
+    ],
+    github: "https://github.com/nexorant/forge-cli",
+    status: "alpha",
+  },
+  {
+    id: "3",
+    slug: "data-stream-sdk",
+    name: "DataStream SDK",
+    description: "A TypeScript SDK for building real-time data pipelines with automatic schema validation, retry logic, and observability built in.",
+    type: "sdk",
+    technologies: ["TypeScript", "Node.js", "WebSockets", "Zod", "OpenTelemetry"],
+    features: [
+      "Type-safe real-time data streaming",
+      "Automatic schema validation with Zod",
+      "Built-in retry and backoff logic",
+      "OpenTelemetry integration",
+      "Browser and Node.js support",
+      "Zero-dependency core",
+      "Comprehensive TypeScript types",
+      "Extensive documentation",
+    ],
+    github: "https://github.com/nexorant/data-stream-sdk",
+    docs: "/products/data-stream-sdk",
+    status: "development",
+  },
+  {
+    id: "4",
+    slug: "ai-gateway-api",
+    name: "AI Gateway API",
+    description: "A unified API gateway for multiple AI providers with intelligent routing, cost management, caching, and observability for production AI applications.",
+    type: "api",
+    technologies: ["Node.js", "TypeScript", "Redis", "OpenAI", "Anthropic", "Prometheus"],
+    features: [
+      "Unified API for OpenAI, Anthropic, Gemini, and more",
+      "Intelligent model routing based on cost and latency",
+      "Response caching with semantic similarity",
+      "Token-level cost tracking per user/team",
+      "Rate limiting and quota management",
+      "OpenTelemetry observability",
+      "Streaming support across all providers",
+      "Fallback and retry logic",
+    ],
+    docs: "/products/ai-gateway-api",
+    demo: "https://demo.nexorant.com/ai-gateway",
+    status: "beta",
+  },
+  {
+    id: "5",
+    slug: "audit-trail",
+    name: "AuditTrail",
+    description: "A plug-and-play audit logging library for Node.js applications that provides tamper-evident logs with full-text search and compliance reporting.",
+    type: "open-source",
+    technologies: ["Node.js", "TypeScript", "PostgreSQL", "Elasticsearch"],
+    features: [
+      "Tamper-evident audit logs",
+      "Full-text search across all events",
+      "Compliance report generation (SOC 2, GDPR)",
+      "Real-time alerting on suspicious patterns",
+      "Multi-tenant support",
+      "Data retention policies",
+      "REST API and SDK",
+      "Dashboard UI included",
+    ],
+    github: "https://github.com/nexorant/audit-trail",
+    docs: "/products/audit-trail",
+    status: "stable",
+  },
+];
+
+export function getProductBySlug(slug: string): Product | undefined {
+  return products.find((p) => p.slug === slug);
+}
+
+export function getProductsByType(type: Product["type"]): Product[] {
+  return products.filter((p) => p.type === type);
+}
